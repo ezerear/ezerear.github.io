@@ -374,141 +374,21 @@
 
       
         
-          
-            <h1 id="requests库的学习"><a href="#requests库的学习" class="headerlink" title="requests库的学习"></a><strong>requests库的学习</strong></h1><p><a href="http://cn.python-requests.org/zh_CN/latest/user/intro.html" target="_blank" rel="noopener">requests官方文档中文版</a></p>
+          <h1 id="requests库的学习"><a href="#requests库的学习" class="headerlink" title="requests库的学习"></a><strong>requests库的学习</strong></h1><p><a href="http://cn.python-requests.org/zh_CN/latest/user/intro.html" target="_blank" rel="noopener">requests官方文档中文版</a></p>
 <p><strong>Requests :</strong></p>
 <ul>
 <li>Beautiful is better than ugly.(美丽优于丑陋)</li>
 <li>Explicit is better than implicit.(直白优于含蓄)</li>
 <li>Simple is better than complex.(简单优于复杂)</li>
 <li>Complex is better than complicated.(复杂优于繁琐)</li>
-<li>Readability counts.(可读性很重要)</li>
-</ul>
-<h3 id="一-安装requtests"><a href="#一-安装requtests" class="headerlink" title="一 . 安装requtests"></a><strong>一 . 安装requtests</strong></h3><p>windows环境 :<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install requests</span><br></pre></td></tr></table></figure></p>
-<p>ubuntu环境 :<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo pip install requests</span><br></pre></td></tr></table></figure></p>
-<p>IDE环境中 <figure class="highlight plain"><figcaption><span>import requests ``` </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">无报错就表示安装完成.</span><br><span class="line"></span><br><span class="line">我的环境  :  `Python3.5 + PyCharm` </span><br><span class="line"></span><br><span class="line">### **二 . 发送请求**</span><br><span class="line"></span><br><span class="line">首先导入requests模块</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>import requests<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">然后可以尝试获取某个网页</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>response = requests.get(“<a href="http://wanmeishijiexiaoshuo.org/&quot;" target="_blank" rel="noopener">http://wanmeishijiexiaoshuo.org/&quot;</a>)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">现在我们就通过requests的get方法进行了一次get请求得到了一个名为responses的Response对象,可以通过这个对象来获取所有我们想要的信息.</span><br><span class="line"></span><br><span class="line">那么同样我们也可以通过 :</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>r = requests.post(‘<a href="http://httpbin.org/post&#39;" target="_blank" rel="noopener">http://httpbin.org/post&#39;</a>, data = {‘key’:’value’})<br>r = requests.put(‘<a href="http://httpbin.org/put&#39;" target="_blank" rel="noopener">http://httpbin.org/put&#39;</a>, data = {‘key’:’value’})<br>r = requests.delete(‘<a href="http://httpbin.org/delete&#39;" target="_blank" rel="noopener">http://httpbin.org/delete&#39;</a>)<br>r = requests.head(‘<a href="http://httpbin.org/get&#39;" target="_blank" rel="noopener">http://httpbin.org/get&#39;</a>)<br>r = requests.options(‘<a href="http://httpbin.org/get&#39;" target="_blank" rel="noopener">http://httpbin.org/get&#39;</a>)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">来进行POST,PUT，DELETE，HEAD 以及 OPTIONS请求.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">####  **2 . 1 传递URL参数**</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">requests 允许使用 params 传递关键字参数, params应为一个字符串字典</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>p = {‘k1’:’v1’}<br>r = requests.get(‘<a href="http://wanmeishijiexiaoshuo.org/&#39;,params=p" target="_blank" rel="noopener">http://wanmeishijiexiaoshuo.org/&#39;,params=p</a>)<br>r.url<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">得到结果 :</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p><a href="http://wanmeishijiexiaoshuo.org/?k1=v1" target="_blank" rel="noopener">http://wanmeishijiexiaoshuo.org/?k1=v1</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">我们还可以将一个列表传入字典的值 ,</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>p = {‘k1’:[‘v1’,’v2’]}<br>r = requests.get(‘<a href="http://wanmeishijiexiaoshuo.org/&#39;,params=p" target="_blank" rel="noopener">http://wanmeishijiexiaoshuo.org/&#39;,params=p</a>)<br>r.url<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">得到结果</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p><a href="http://wanmeishijiexiaoshuo.org/?k1=v1&amp;k1=v2" target="_blank" rel="noopener">http://wanmeishijiexiaoshuo.org/?k1=v1&amp;k1=v2</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">####  **2 . 2 定制请求头**</span><br><span class="line"></span><br><span class="line">如果需要添加HTTP头部, 只要传递一个字典到headers参数即可.</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>url = ‘<a href="http://wanmeishijiexiaoshuo.org/&#39;" target="_blank" rel="noopener">http://wanmeishijiexiaoshuo.org/&#39;</a><br>headers = {‘user-agent’: ‘my-app/0.0.1’}<br>r = requests.get(url, headers=headers)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">需要注意的是 : Requests 不会基于定制 header 的具体情况改变自己的行为。只不过在最后的请求中，所有的 header 信息都会被传递进去。</span><br><span class="line"></span><br><span class="line">####  **2 . 3 POST 请求**</span><br><span class="line"></span><br><span class="line">如果你需要发送一些表单形式的数据, 只需要传递一个字典给data参数. 你的数据字典在发出请求时会自动编码为表单形式：</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>payload = {‘key1’: ‘value1’, ‘key2’: ‘value2’}<br>r = requests.post(“<a href="http://httpbin.org/post&quot;" target="_blank" rel="noopener">http://httpbin.org/post&quot;</a>, data=payload)<br>print(r.text)<br>{<br>  …<br>  “form”: {<br>    “key2”: “value2”,<br>    “key1”: “value1”<br>  },<br>  …<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">你还可以为 data 参数传入一个元组列表。在表单中多个元素使用同一 key 的时候，这种方式尤其有效：</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>payload = ((‘key1’, ‘value1’), (‘key1’, ‘value2’))<br>r = requests.post(‘<a href="http://httpbin.org/post&#39;" target="_blank" rel="noopener">http://httpbin.org/post&#39;</a>, data=payload)<br>print(r.text)<br>{<br>  …<br>  “form”: {<br>    “key1”: [<br>      “value1”,<br>      “value2”<br>    ]<br>  },<br>  …<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## **三 . 响应内容**</span><br><span class="line"></span><br><span class="line">我们可以通过返回的response对象获取服务器响应的内容, 以此站为例 ,</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>r = requests.get(‘<a href="http://wanmeishijiexiaoshuo.org/&#39;" target="_blank" rel="noopener">http://wanmeishijiexiaoshuo.org/&#39;</a>)<br>r.text<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">返回结果 :</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>&lt;!DOCTYPE html&gt;</p>
-<p><html lang="zh-CN" class="no-js"></html></p>
-<p><head></head></p>
-<p><meta charset="UTF-8"></p>
-<p><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><br><code>`</code><br>(! 仅部分展示,原内容为当前请求网页的html内容)</p>
-<p>Requests 会自动解码来自服务器的内容, 大多数的 unicode 字符集都能被无缝解码</p>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>r.status_code</td>
-<td>http响应状态码,200表示成功</td>
-</tr>
-<tr>
-<td>r.raw</td>
-<td>获取来自服务器的原始套接字响应, r.raw.read()获取</td>
-</tr>
-<tr>
-<td>r.content</td>
-<td>以字节的方式访问请求响应体</td>
-</tr>
-<tr>
-<td>r.text</td>
-<td>以字符串方式访问请求响应体</td>
-</tr>
-<tr>
-<td>r.headers</td>
-<td>以字典对象存储服务器响应头</td>
-</tr>
-<tr>
-<td>r.encoding</td>
-<td>查看Requests编码，且使用此属性来改变它</td>
-</tr>
-<tr>
-<td>r.json()</td>
-<td>内置的 JSON 解码器，助你处理 JSON 数据</td>
-</tr>
-<tr>
-<td>r.raise_for_status()</td>
-<td>失败请求(非200响应)抛出异常</td>
-</tr>
-</tbody>
-</table>
-<p>text和content的不同之处 :</p>
-<p>提取文本就用text<br>提取图片、文件，就要用到content</p>
-<h2 id="错误与异常"><a href="#错误与异常" class="headerlink" title="错误与异常"></a><strong>错误与异常</strong></h2><p>遇到网络问题（如：DNS 查询失败、拒绝连接等）时，Requests 会抛出一个 ConnectionError 异常。</p>
-<p>如果 HTTP 请求返回了不成功的状态码， Response.raise_for_status() 会抛出一个 HTTPError 异常。</p>
-<p>若请求超时，则抛出一个 Timeout 异常。</p>
-<p>若请求超过了设定的最大重定向次数，则会抛出一个 TooManyRedirects 异常。</p>
-<p>所有Requests显式抛出的异常都继承自 requests.exceptions.RequestException 。</p>
-<h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1>
-          
+<li>Readability counts.(可读性很重要)
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/04/14/Python-第三方库requests/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
