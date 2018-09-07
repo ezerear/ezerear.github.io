@@ -6,7 +6,7 @@ Run yum clean all && yum makecache
 Run yum install -y pwgen openssh-server git  supervisor python-pip
 RUN yum install -y wget curl tar bzip2  vim-enhanced sudo yum-utils 
 Run yum install -y npm git
-Run git clone https://github.com/ezerear/ezerear.github.io/
+Run git clone https://github.com/ezerear/ezerear.github.io.git
 Run cd /hexow && git pull
 Run npm install hexo-cli -g
 Run cd /hexow && npm install
